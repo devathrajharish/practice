@@ -69,12 +69,6 @@ def deletion(root, key):
 
 
 
-
-
-
-
-
-
 def main():
 
     root = Node(10)
