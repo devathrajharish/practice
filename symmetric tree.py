@@ -7,14 +7,18 @@ class Node:
 
 
 def isSymmetric(root):
-    if (root is None): return True
+    if root is None:
+        return True
     queue = [(root.left, root.right)]
-    while (queue):
+    while queue:
 
         node1, node2 = queue.pop(0)
-        if (node1 is None and node2 is None): continue
-        if (None in [node1, node2]): return False
-        if (node1.val != node2.val): return False
+        if node1 is None and node2 is None:
+            continue
+        if None in [node1, node2]:
+            return False
+        if node1.val != node2.val:
+            return False
         queue.append((node1.left, node2.right))
         queue.append((node1.right, node2.left))
     return True
