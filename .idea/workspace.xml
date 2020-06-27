@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c5de225-5dff-4cf7-89a7-230414ecebfc" name="Default Changelist" comment="GCD code">
-      <change afterPath="$PROJECT_DIR$/Num_of_islands_DFS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Num_of_islands.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symmetric tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/symmetric tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/binary_tree.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,21 +20,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
-  </component>
   <component name="ProjectId" id="1bKupVXTZonEzySbVXwefTYuuas" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/minimum_node_BST.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.lowest_common_ancestor">
+  <component name="RunManager" selected="Python.buy_and_sell_stock_ii">
     <configuration type="PythonConfigurationType" factoryName="Python">
       <module name="Practice_coding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -58,7 +52,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Num_of_islands_DFS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Validate_Binary_Tree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Practice_coding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -70,7 +64,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\Practice_coding\Num_of_islands_DFS.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Validate_Binary_Tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,7 +73,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Number_of_islands_BFS (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Practice_coding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,11 +81,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tinder/tinder-bot-master/tinder-bot-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Number_of_islands_BFS.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tinder/tinder-bot-master/tinder-bot-master/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -100,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Number_of_islands_BFS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="binary_tree" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Practice_coding" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,7 +106,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\Practice_coding\Number_of_islands_BFS.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/binary_tree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="buy_and_sell_stock_ii" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Practice_coding" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/buy_and_sell_stock_ii.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,41 +157,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="maximum_path_sum" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Practice_coding" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/maximum_path_sum.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Python.maximum_path_sum" />
-      <item itemvalue="Python.Number_of_islands_BFS" />
-      <item itemvalue="Python.Num_of_islands_DFS" />
-      <item itemvalue="Python.Number_of_islands_BFS (1)" />
+      <item itemvalue="Python.Validate_Binary_Tree" />
+      <item itemvalue="Python.binary_tree" />
       <item itemvalue="Python.lowest_common_ancestor" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.buy_and_sell_stock_ii" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.buy_and_sell_stock_ii" />
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.Validate_Binary_Tree" />
+        <item itemvalue="Python.binary_tree" />
         <item itemvalue="Python.lowest_common_ancestor" />
-        <item itemvalue="Python.Number_of_islands_BFS (1)" />
-        <item itemvalue="Python.Number_of_islands_BFS" />
-        <item itemvalue="Python.Num_of_islands_DFS" />
-        <item itemvalue="Python.maximum_path_sum" />
       </list>
     </recent_temporary>
   </component>
@@ -198,21 +192,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="GCD code" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom" timestamp="1588397842518">
+    <state width="938" height="283" key="GridCell.Tab.0.bottom" timestamp="1590630591888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588397842518" />
-    <state width="1899" height="281" key="GridCell.Tab.0.center" timestamp="1588397842517">
+    <state width="938" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590630591888" />
+    <state width="938" height="283" key="GridCell.Tab.0.center" timestamp="1590630591888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588397842517" />
-    <state width="1899" height="281" key="GridCell.Tab.0.left" timestamp="1588397842517">
+    <state width="938" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590630591888" />
+    <state width="938" height="283" key="GridCell.Tab.0.left" timestamp="1590630591888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588397842517" />
-    <state width="1899" height="281" key="GridCell.Tab.0.right" timestamp="1588397842517">
+    <state width="938" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590630591888" />
+    <state width="938" height="283" key="GridCell.Tab.0.right" timestamp="1590630591888">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588397842517" />
+    <state width="938" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590630591888" />
   </component>
 </project>

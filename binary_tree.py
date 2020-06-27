@@ -66,4 +66,3 @@ if __name__ == '__main__':
     print("Inorder traversal after insertion:", end=" ")
     inorder(root)
 
-# This code is contributed by SHUBHAMSINGH10
