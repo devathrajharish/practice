@@ -1,12 +1,14 @@
 def main():
 
-    def findLength(A, B):
-        memo = [[0] * (len(B) + 1) for _ in range(len(A) + 1)]
-        for i in range(len(A) - 1, -1, -1):
-            for j in range(len(B) - 1, -1, -1):
-                if A[i] == B[j]:
-                    memo[i][j] = memo[i + 1][j + 1] + 1
-        return max(max(row) for row in memo)
+    def findLength(A,B):
+        m = [[0 for i in range(len(A) + 1)] for j in range(len(B) + 1)]
+        maxi = 0
+        for i in range(1, len(m)):
+            for j in range(1, len(m[0])):
+                if A[i - 1] == B[j - 1]:
+                    m[i][j] = 1 + m[i - 1][j - 1]
+                    maxi = max(maxi, m[i][j])
+        return maxi
 
     A = [1,2,3,2,1]
     B = [3,2,1,4,7]
