@@ -2,7 +2,7 @@ def main():
     def wordBreak(s, wordDict):
         if len(s) == 0:
             return True
-        
+
         for x in wordDict:
             prefix = s[0:len(x)]
             result = False
