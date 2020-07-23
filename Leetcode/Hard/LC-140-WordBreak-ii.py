@@ -1,8 +1,5 @@
 def main():
 
-
-
-
     def helper(s, wordDict, cache):
         if not s:
             return []

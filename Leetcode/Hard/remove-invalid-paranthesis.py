@@ -7,6 +7,7 @@
 def main():
 
     def remove_paranthesis(paranthesis):
+
             
 
     paranthesis = '()())()'
