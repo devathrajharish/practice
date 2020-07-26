@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4c5de225-5dff-4cf7-89a7-230414ecebfc" name="Default Changelist" comment="GCD code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sparktest.py" beforeDir="false" afterPath="$PROJECT_DIR$/sparktest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.LC-973-K-closest-points-to-origin">
+  <component name="RunManager" selected="Python.sparktest">
     <configuration type="PythonConfigurationType" factoryName="Python">
       <module name="Practice_coding" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,8 +166,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.LC-973-K-closest-points-to-origin" />
         <item itemvalue="Python.sparktest" />
+        <item itemvalue="Python.LC-973-K-closest-points-to-origin" />
         <item itemvalue="Python.maximum_len_of_sub_array" />
         <item itemvalue="Python.buy_and_sell_stock_ii" />
         <item itemvalue="Python.app" />
@@ -199,25 +200,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="587" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1593434381871" />
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1595648648746">
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1595722727896">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1595648648746" />
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595413145456" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1595648648745">
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595722727896" />
+    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1595722727894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1595648648745" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595413145456" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1595648648745">
+    <state width="1899" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595722727894" />
+    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1595722727894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1595648648745" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595413145455" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1595648648746">
+    <state width="1899" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595722727894" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1595722727894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1160@0.0.1920.1040" timestamp="1595648648746" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595413145456" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595722727894" />
   </component>
 </project>

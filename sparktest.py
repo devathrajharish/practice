@@ -26,6 +26,7 @@ def main():
     os.environ['AWS_SECRET_ACCESS_KEY'] = config['AWS']['AWS_SECRET_ACCESS_KEY']
 
     country_data_path = config['S3']['COUNTRY_DATA']
+    dataset1_path = config['S3']['dataset1']
     # country_notes_path = config['S3']['COUNTRY_NOTES_DATA']
     # foot_notes_path = config['S3']['FOOT_NOTES_DATA']
     series_path = config['S3']['SERIES_DATA']
@@ -42,7 +43,7 @@ def main():
     sc._jsc.hadoopConfiguration().set("fs.s3a.secret.key",
                                          os.environ['AWS_SECRET_ACCESS_KEY'])
     sc._jsc.hadoopConfiguration().set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-    indicators_data = sc.read.csv(indicators_path, header=True)
+    indicators_data = sc.read.csv(dataset1_path, header=True)
     country_data = sc.read.csv(country_data_path, header=True)
     series_data = sc.read.csv(series_path, header=True)
     print(indicators_data.head(5))
