@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c5de225-5dff-4cf7-89a7-230414ecebfc" name="Default Changelist" comment="GCD code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4c5de225-5dff-4cf7-89a7-230414ecebfc" name="Default Changelist" comment="GCD code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,11 +155,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.LC-973-K-closest-points-to-origin" />
       <item itemvalue="Python.buy_and_sell_stock_ii" />
       <item itemvalue="Python.maximum_len_of_sub_array" />
-      <item itemvalue="Python.sparktest" />
-      <item itemvalue="Python.LC-973-K-closest-points-to-origin" />
       <item itemvalue="Python.power_company" />
+      <item itemvalue="Python.sparktest" />
     </list>
     <recent_temporary>
       <list>
