@@ -1,0 +1,9 @@
+{
+	"name": "ADF-vhdev",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "46707642-2674-4bab-b4a3-1dfd7d6b8169",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}
