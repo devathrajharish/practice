@@ -3,36 +3,9 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Databricks-1",
-				"type": "DatabricksNotebook",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"notebookPath": "/Users/v-hdevathraj@microsoft.com/Spark-Programming-1.5.0-IL/Python/1.2 Databricks Platform"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
 				"name": "Notebook2",
 				"type": "DatabricksNotebook",
-				"dependsOn": [
-					{
-						"activity": "Databricks-1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
