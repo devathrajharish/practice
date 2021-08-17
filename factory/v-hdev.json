@@ -1,0 +1,9 @@
+{
+	"name": "v-hdev",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8744549e-5f85-48b3-9a76-38df7f42e02e",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}
