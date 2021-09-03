@@ -90,7 +90,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Users/v-hdevathraj@microsoft.com/Spark-Programming-1.5.0-IL/Python/1.3 Spark SQL"
+							"notebookPath": "/Users/v-hdevathraj@microsoft.com/v-hdevathraj@microsoft.com/Test-deep-clone"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks1",
