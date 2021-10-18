@@ -1,0 +1,68 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "testcsv/output/orderbooks",
+				"fileSystem": "firstcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "_c0",
+				"type": "String"
+			},
+			{
+				"name": "carat",
+				"type": "String"
+			},
+			{
+				"name": "cut",
+				"type": "String"
+			},
+			{
+				"name": "color",
+				"type": "String"
+			},
+			{
+				"name": "clarity",
+				"type": "String"
+			},
+			{
+				"name": "depth",
+				"type": "String"
+			},
+			{
+				"name": "table",
+				"type": "String"
+			},
+			{
+				"name": "price",
+				"type": "String"
+			},
+			{
+				"name": "x",
+				"type": "String"
+			},
+			{
+				"name": "y",
+				"type": "String"
+			},
+			{
+				"name": "z",
+				"type": "String"
+			}
+		]
+	}
+}
