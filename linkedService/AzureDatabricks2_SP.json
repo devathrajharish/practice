@@ -1,0 +1,14 @@
+{
+	"name": "AzureDatabricks2_SP",
+	"properties": {
+		"description": "SP",
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-3039079821613052.12.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/13e36d7f-fd07-49e9-b216-7ed1b10bcfb4/resourceGroups/v-hdevathraj-new/providers/Microsoft.Databricks/workspaces/premium-workspace",
+			"existingClusterId": "0720-203024-eel219"
+		}
+	}
+}
