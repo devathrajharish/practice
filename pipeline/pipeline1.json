@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Test_ADF_SP"
+					"notebookPath": "/Users/v-hdevathraj@microsoft.com/v-hdevathraj@microsoft.com/Anusha-test-permissions"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks2_SP",
