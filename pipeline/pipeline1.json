@@ -45,7 +45,7 @@
 					"notebookPath": "/Users/v-hdevathraj@microsoft.com/Spark-Programming-1.5.0-IL/Python/1.4 Reader & Writer"
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
+					"referenceName": "AzureDatabricks2_SP",
 					"type": "LinkedServiceReference"
 				}
 			},
