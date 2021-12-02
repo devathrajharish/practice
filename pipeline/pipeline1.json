@@ -15,7 +15,14 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/v-hdevathraj@microsoft.com/v-hdevathraj@microsoft.com/Anusha-test-permissions"
+					"notebookPath": "/Users/v-hdevathraj@microsoft.com/v-hdevathraj@microsoft.com/Anusha-test-permissions",
+					"libraries": [
+						{
+							"cran": {
+								"package": "lda"
+							}
+						}
+					]
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks2_SP",
