@@ -21,6 +21,11 @@
 							"cran": {
 								"package": "lda"
 							}
+						},
+						{
+							"pypi": {
+								"package": "pyodbc"
+							}
 						}
 					]
 				},
