@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "v-hdev"
 		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
 		"AzureDatabricks1_accessToken": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
@@ -19,15 +15,23 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricksDeltaLake1'"
 		},
+		"AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase'"
+		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
 		},
-		"Databricks_accessToken": {
+		"hdevathrajstorage_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'Databricks'"
+			"metadata": "Secure string for 'accountKey' of 'hdevathrajstorage'"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"Snowflake1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
+		},
+		"hdevathrajstorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://hdevathrajstorage.dfs.core.windows.net"
 		},
@@ -58,23 +62,26 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureDataLakeStorage1_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					},
 					"AzureDatabricks1_accessToken": {
 						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
 					"AzureDatabricksDeltaLake1_accessToken": {
 						"value": "[parameters('AzureDatabricksDeltaLake1_accessToken')]"
 					},
+					"AzureSqlDatabase_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_connectionString')]"
+					},
 					"AzureSynapseAnalytics1_connectionString": {
 						"value": "[parameters('AzureSynapseAnalytics1_connectionString')]"
 					},
-					"Databricks_accessToken": {
-						"value": "[parameters('Databricks_accessToken')]"
+					"hdevathrajstorage_accountKey": {
+						"value": "[parameters('hdevathrajstorage_accountKey')]"
 					},
-					"AzureDataLakeStorage1_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					"Snowflake1_connectionString": {
+						"value": "[parameters('Snowflake1_connectionString')]"
+					},
+					"hdevathrajstorage_properties_typeProperties_url": {
+						"value": "[parameters('hdevathrajstorage_properties_typeProperties_url')]"
 					}
 				}
 			},

@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "v-hdev"
 		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
 		"AzureDatabricks1_accessToken": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
@@ -19,15 +15,23 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accessToken' of 'AzureDatabricksDeltaLake1'"
 		},
+		"AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase'"
+		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSynapseAnalytics1'"
 		},
-		"Databricks_accessToken": {
+		"hdevathrajstorage_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'Databricks'"
+			"metadata": "Secure string for 'accountKey' of 'hdevathrajstorage'"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"Snowflake1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Snowflake1'"
+		},
+		"hdevathrajstorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://hdevathrajstorage.dfs.core.windows.net"
 		}
@@ -37,119 +41,13 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyPipeline_vj4')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy_vj4",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [
-							{
-								"name": "Source",
-								"value": "."
-							},
-							{
-								"name": "Destination",
-								"value": "dbo.employee_test"
-							}
-						],
-						"typeProperties": {
-							"source": {
-								"type": "AzureDatabricksDeltaLakeSource",
-								"query": "select * from adf_test.Persons",
-								"exportSettings": {
-									"type": "AzureDatabricksDeltaLakeExportCommand"
-								}
-							},
-							"sink": {
-								"type": "SqlDWSink",
-								"allowPolyBase": true,
-								"polyBaseSettings": {
-									"rejectValue": 0,
-									"rejectType": "value",
-									"useTypeDefault": true
-								}
-							},
-							"enableStaging": true,
-							"stagingSettings": {
-								"linkedServiceName": {
-									"referenceName": "AzureDataLakeStorage1",
-									"type": "LinkedServiceReference"
-								},
-								"path": "firstcontainer"
-							},
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "PersonID",
-											"type": "Int"
-										},
-										"sink": {
-											"name": "id",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "LastName",
-											"type": "string"
-										},
-										"sink": {
-											"name": "/BIC/ZCH_BPEPL",
-											"type": "String"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "SourceDataset_vj4",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DestinationDataset_vj4",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_vj4')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_vj4')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "Notebook2",
+						"name": "Notebook3",
 						"type": "DatabricksNotebook",
 						"dependsOn": [],
 						"policy": {
@@ -161,37 +59,22 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Users/v-hdevathraj@microsoft.com/v-hdevathraj@microsoft.com/Test-deep-clone"
+							"notebookPath": "/Users/v-hdevathraj@microsoft.com/v-hdevathraj@microsoft.com/Anusha-test-permissions",
+							"libraries": [
+								{
+									"cran": {
+										"package": "lda"
+									}
+								},
+								{
+									"pypi": {
+										"package": "pyodbc"
+									}
+								}
+							]
 						},
 						"linkedServiceName": {
-							"referenceName": "AzureDatabricks1",
-							"type": "LinkedServiceReference"
-						}
-					},
-					{
-						"name": "Notebook3",
-						"type": "DatabricksNotebook",
-						"dependsOn": [
-							{
-								"activity": "Notebook2",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"notebookPath": "/Users/v-hdevathraj@microsoft.com/Spark-Programming-1.5.0-IL/Python/1.4 Reader & Writer"
-						},
-						"linkedServiceName": {
-							"referenceName": "AzureDatabricks1",
+							"referenceName": "AzureDatabricks2_SP",
 							"type": "LinkedServiceReference"
 						}
 					},
@@ -230,524 +113,95 @@
 				"annotations": []
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks2_SP')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks1')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline2')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "testcsv/splits-single",
-									"wildcardFileName": "*.csv",
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".csv"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "_c0",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "_c0",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "carat",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "carat",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "cut",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "cut",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "color",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "color",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "clarity",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "clarity",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "depth",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "depth",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "table",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "table",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "price",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "price",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "x",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "x",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "y",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "y",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "z",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "z",
-											"type": "String",
-											"physicalType": "String"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DelimitedText1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline2_copy1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFolderPath": "testcsv/splits-new-data",
-									"wildcardFileName": "*.csv",
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "DelimitedTextSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
-								},
-								"formatSettings": {
-									"type": "DelimitedTextWriteSettings",
-									"quoteAllText": true,
-									"fileExtension": ".csv"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "date",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "date",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "delay",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "delay",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "distance",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "distance",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "origin",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "origin",
-											"type": "String",
-											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "destination",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "destination",
-											"type": "String",
-											"physicalType": "String"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DelimitedText1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DelimitedText1",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"name": "[concat(parameters('factoryName'), '/ParquetTables')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
+					"referenceName": "hdevathrajstorage",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"FileName": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
-				"type": "DelimitedText",
+				"type": "Parquet",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": "testcsv/output/orderbooks",
-						"fileSystem": "firstcontainer"
+						"fileName": {
+							"value": "@dataset().FileName",
+							"type": "Expression"
+						},
+						"fileSystem": "adf-pipeline"
 					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
+					"compressionCodec": "snappy"
 				},
-				"schema": [
-					{
-						"name": "_c0",
-						"type": "String"
-					},
-					{
-						"name": "carat",
-						"type": "String"
-					},
-					{
-						"name": "cut",
-						"type": "String"
-					},
-					{
-						"name": "color",
-						"type": "String"
-					},
-					{
-						"name": "clarity",
-						"type": "String"
-					},
-					{
-						"name": "depth",
-						"type": "String"
-					},
-					{
-						"name": "table",
-						"type": "String"
-					},
-					{
-						"name": "price",
-						"type": "String"
-					},
-					{
-						"name": "x",
-						"type": "String"
-					},
-					{
-						"name": "y",
-						"type": "String"
-					},
-					{
-						"name": "z",
-						"type": "String"
-					}
-				]
+				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/hdevathrajstorage')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_vj4')]",
+			"name": "[concat(parameters('factoryName'), '/SQL_table')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureSynapseAnalytics1",
+					"referenceName": "AzureSqlDatabase",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
-				"type": "AzureSqlDWTable",
-				"schema": [
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
+				"parameters": {
+					"TableName": {
+						"type": "string"
 					},
-					{
-						"name": "/BIC/ZCH_BPEPL",
-						"type": "varchar"
+					"SchemaName": {
+						"type": "string"
 					}
-				],
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "employee_test"
+					"schema": {
+						"value": "@dataset().SchemaName",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@dataset().TableName",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSynapseAnalytics1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_vj4')]",
+			"name": "[concat(parameters('factoryName'), '/SqlTable')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureDatabricksDeltaLake1",
+					"referenceName": "AzureSqlDatabase",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"type": "AzureDatabricksDeltaLakeDataset",
-				"typeProperties": {},
-				"schema": [
-					{
-						"name": "PersonID",
-						"type": "integer"
-					},
-					{
-						"name": "LastName",
-						"type": "string"
-					},
-					{
-						"name": "FirstName",
-						"type": "string"
-					},
-					{
-						"name": "Address",
-						"type": "string"
-					},
-					{
-						"name": "City",
-						"type": "string"
-					}
-				]
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricksDeltaLake1')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
@@ -762,16 +216,24 @@
 						"type": "SecureString",
 						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
-					"newClusterNodeType": "Standard_DS3_v2",
-					"newClusterNumOfWorker": "1",
-					"newClusterSparkEnvVars": {
-						"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-					},
-					"newClusterCustomTags": {
-						"ResourceClass": "Serverless"
-					},
-					"newClusterVersion": "7.3.x-scala2.12",
-					"newClusterInitScripts": []
+					"existingClusterId": "0720-203024-eel219"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks2_SP')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "SP",
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-3039079821613052.12.azuredatabricks.net",
+					"authentication": "MSI",
+					"workspaceResourceId": "/subscriptions/13e36d7f-fd07-49e9-b216-7ed1b10bcfb4/resourceGroups/v-hdevathraj-new/providers/Microsoft.Databricks/workspaces/premium-workspace",
+					"existingClusterId": "0720-203024-eel219"
 				}
 			},
 			"dependsOn": []
@@ -795,6 +257,19 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureSqlDatabase_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalytics1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -808,25 +283,48 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Databricks')]",
+			"name": "[concat(parameters('factoryName'), '/Its_managed_identity')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "Service principal authentication ",
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
 					"domain": "https://adb-3039079821613052.12.azuredatabricks.net",
-					"accessToken": {
+					"authentication": "MSI",
+					"workspaceResourceId": "/subscriptions/13e36d7f-fd07-49e9-b216-7ed1b10bcfb4/resourceGroups/v-hdevathraj-new/providers/Microsoft.Databricks/workspaces/premium-workspace",
+					"existingClusterId": "0720-203024-eel219"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Snowflake1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "Snowflake",
+				"typeProperties": {
+					"connectionString": "[parameters('Snowflake1_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/hdevathrajstorage')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('hdevathrajstorage_properties_typeProperties_url')]",
+					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('Databricks_accessToken')]"
-					},
-					"newClusterNodeType": "Standard_DS3_v2",
-					"newClusterNumOfWorker": "1",
-					"newClusterSparkEnvVars": {
-						"PYSPARK_PYTHON": "/databricks/python3/bin/python3"
-					},
-					"newClusterVersion": "8.0.x-cpu-ml-scala2.12",
-					"newClusterInitScripts": []
+						"value": "[parameters('hdevathrajstorage_accountKey')]"
+					}
 				}
 			},
 			"dependsOn": []

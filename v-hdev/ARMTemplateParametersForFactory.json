@@ -5,22 +5,25 @@
 		"factoryName": {
 			"value": "v-hdev"
 		},
-		"AzureDataLakeStorage1_accountKey": {
-			"value": ""
-		},
 		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
 		"AzureDatabricksDeltaLake1_accessToken": {
 			"value": ""
 		},
+		"AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
 		"AzureSynapseAnalytics1_connectionString": {
 			"value": ""
 		},
-		"Databricks_accessToken": {
+		"hdevathrajstorage_accountKey": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"Snowflake1_connectionString": {
+			"value": ""
+		},
+		"hdevathrajstorage_properties_typeProperties_url": {
 			"value": "https://hdevathrajstorage.dfs.core.windows.net"
 		}
 	}
