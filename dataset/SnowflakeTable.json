@@ -8,10 +8,23 @@
 		"parameters": {
 			"name": {
 				"type": "string"
+			},
+			"schema_name": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "SnowflakeTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schema_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().name",
+				"type": "Expression"
+			}
+		}
 	}
 }
