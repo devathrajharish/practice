@@ -40,52 +40,8 @@
 							"useTypeDefault": true
 						}
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureDataLakeStorage1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "firstcontainer"
-					},
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "PersonID",
-									"type": "Int"
-								},
-								"sink": {
-									"name": "id",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "LastName",
-									"type": "string"
-								},
-								"sink": {
-									"name": "/BIC/ZCH_BPEPL",
-									"type": "String"
-								}
-							}
-						]
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "SourceDataset_vj4",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DestinationDataset_vj4",
-						"type": "DatasetReference"
-					}
-				]
+					"enableStaging": true
+				}
 			}
 		],
 		"annotations": []
