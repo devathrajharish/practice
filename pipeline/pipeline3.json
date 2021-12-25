@@ -17,6 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SnowflakeSource",
+						"query": "USE SNOWFLAKE_SAMPLE_DATA\nshow tables in SNOWFLAKE_SAMPLE_DATA.TPCDS_SF10TCL;",
 						"exportSettings": {
 							"type": "SnowflakeExportCopyCommand"
 						}
