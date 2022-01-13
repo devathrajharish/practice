@@ -1,0 +1,33 @@
+
+Input: 
+Employee table:
++----+-------+--------+-----------+
+| id | name  | salary | managerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | Null      |
+| 4  | Max   | 90000  | Null      |
++----+-------+--------+-----------+
+Output: 
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+Explanation: Joe is the only employee who earns more than his manager.
+
+Create table If Not Exists Employee (id int, name varchar(255), salary int, managerId int)
+
+insert into Employee (id, name, salary, managerId) values ('1', 'Joe', '70000', '3')
+insert into Employee (id, name, salary, managerId) values ('2', 'Henry', '80000', '4')
+insert into Employee (id, name, salary, managerId) values ('3', 'Sam', '60000', 'None')
+insert into Employee (id, name, salary, managerId) values ('4', 'Max', '90000', 'None')
+
+
+# Write your MySQL query statement below
+
+select A.name as Employee 
+from Employee as A join employee as B
+on A.managerID = B.id
+AND A.salary > B.salary
