@@ -1,3 +1,6 @@
+# Given a two dimensional list, for example [ [2,3],[3,4],[5]] person 2 is friends with 3 etc, find how many friends each person has. 
+# Note, one person has no friends
+
 def main():
     def no_of_friends(friends):
         dicts = {}

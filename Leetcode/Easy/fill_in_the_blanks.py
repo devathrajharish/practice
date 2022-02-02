@@ -1,3 +1,6 @@
+# Can you do the following without using subquery?: {1,None,1,2,None} --> [1,1,1,2,2] 
+# Ensure you take care of case input[None] which means None object
+
 def main():
     def fill_in_the_blanks(blanks):
         
@@ -8,7 +11,7 @@ def main():
             
         return blanks
 
-    blanks = [None,None, 3,4,5,None,None,None,5]
+    blanks = [1,None, 3,4,5,None,None,None,5]
     print(fill_in_the_blanks(blanks))
 if __name__ == '__main__':
     main()

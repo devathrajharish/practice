@@ -1,0 +1,23 @@
+import collections
+from Medium import level_order_queue
+def main():
+    def n_smallest(inputDict,n):
+        
+        if n == 0 or len(inputDict.values()) < n:
+            return None
+        else:
+            dd = collections.defaultdict(list)
+
+            for k,v in inputDict.items():
+                dd[v].append(k)
+
+            x = sorted(dd.items())
+        level_order_queue.LevelOrder()
+        return x[-n][1][0]
+
+    n = 3
+    dicts ={"laptop": 999, "smartphone":999, "smarttv":500, "smartwatch":300, "smart home": 9999999}
+    print(n_smallest(dicts,n))
+
+if __name__ == '__main__':
+    main()

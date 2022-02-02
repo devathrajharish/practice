@@ -1,0 +1,29 @@
+# Complete a function that returns the number of times a given character occurs in the given string.
+# For example:
+# - input string = "mississippi"
+# - char = "s"
+#
+# - output : 4
+
+
+def main():
+    def countchar(ch, string1):
+        dicts = {}
+        if len(string1) == 0:
+            return None
+        
+        for x in string1:
+            if x in dicts:
+                dicts[x] += 1
+            
+            else:
+                dicts[x] = 1
+        
+        return dicts.get(ch)
+
+
+    ch = 'k'
+    string1 = 'missisipi'
+    print(countchar(ch, string1))
+if __name__ == '__main__':
+    main()

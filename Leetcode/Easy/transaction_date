@@ -1,0 +1,19 @@
+select startss *100.00 / total as pct_of_transactions_on_first_or_last_day_of_valid_promotion
+from (
+select COUNT(case when transaction_date = start_date or transaction_date = end_date
+then product_id END ) as startss,
+  count(product_id) as total
+from sales as s
+JOIN promotions as p ON s.promotion_id = p.promotion_id
+where s.promotion_id != 0
+) as tmp
+
+   
+with a as (
+select product_id from Sales
+where sale_date < '2019-01-01' or sale_date > '2019-03-31'
+)
+
+select distinct s.product_id, p.product_name from Sales s
+join Product p on p.product_id=s.product_id
+where sale_date between '2019-01-01' and '2019-03-31' and s.product_id not in (select * from a)
